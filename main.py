@@ -38,7 +38,7 @@ async def search(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("No matching post found.")
 
 # Setup bot
-app = ApplicationBuilder().token(os.getenv("8189883530:AAF36-GgsU8gEbJblP-qQpbwM3cAozHq6pM")).build()
+app = ApplicationBuilder().token(os.getenv("BOT_TOKEN")).build()
 app.add_handler(CommandHandler("start", start))
 app.add_handler(CommandHandler("search", search))
 

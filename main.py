@@ -9,7 +9,7 @@ import os
 logging.basicConfig(level=logging.INFO)
 
 # Firebase setup
-cred = credentials.Certificate("firebase-key.json")  # ADD THIS FILE (read notes)
+cred = credentials.Certificate("firebase-key.json")  # MAKE SURE THIS FILE EXISTS
 firebase_admin.initialize_app(cred)
 db = firestore.client()
 
@@ -42,6 +42,6 @@ app = ApplicationBuilder().token(os.getenv("BOT_TOKEN")).build()
 app.add_handler(CommandHandler("start", start))
 app.add_handler(CommandHandler("search", search))
 
-# Run
+# Run the bot
 if __name__ == "__main__":
     app.run_polling()
